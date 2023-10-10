@@ -1,0 +1,139 @@
+
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    li,a{
+      font-weight: 600;
+      font-size: 20px;
+     color: #0015cf;
+      text-decoration: none;
+    }
+    button{
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+    }
+
+    .card-title{
+      color: #455ff1;
+      font-weight: 600;
+    }
+    .card-text{
+      color: #797979;
+    }
+    .logo{
+      cursor: pointer;
+    }
+    .nav1{
+      background-color: #a7e0ff ;
+  
+    }
+    #banner{
+      background-color:#a7e0ff ;
+      padding-top: 5rem;
+      color: #ffffff;
+    }
+     .bottom-img{
+    width: 100%;
+  }
+
+
+   .nav{
+     list-style: none;
+   }
+   
+   .nav li{
+     display: inline-block;
+     padding: 0px 20px;
+   }
+   .nav a{
+     transition: all 0.3s ease 0s;
+   }
+   .nav li ,a :hover{
+  color: #f14545;
+   }
+   button{
+     padding: 9px 25px;
+     background-color: #101bb9;
+     border: none ;
+     border-radius: 50px;
+     cursor:pointer;
+     transition: all 0.3s ease 0s;
+   }
+   button:hover{
+     background-color: rgb(255, 230, 0);
+   }
+ 
+    .rc-text--center {
+        text-align: center;
+        width: 100%;
+    }
+    .rc-baseline *, .rc-baseline :after, .rc-baseline :before {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+    
+    div {
+        display: block;
+    } 
+    .container {
+      max-width: 960px;
+    }
+  
+
+  .promo-tittle{
+      color: #1021bd;
+    font-size: 70px;
+    font-weight: 600;
+    margin-top: 20px ;
+    margin-left: 12%;
+    }
+    .pro{
+      color: #1021bd;
+      font-size: 20px;
+      font-weight: 500;
+      opacity: 60%;
+      margin-left: 13%;
+    }
+
+    
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-weight: 300;
+      line-height: 1;
+      
+      letter-spacing: -.05rem;
+      color: #f14593;
+    }
+  
+    
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+    
+    @media (min-width: 40em) {
+      .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+      }
+    
+      .featurette-heading {
+        font-size: 50px;
+      }
+    }
+    
+    @media (min-width: 62em) {
+      .featurette-heading {
+        margin-top: 7rem;
+      }
+    }
+  

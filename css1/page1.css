@@ -1,0 +1,182 @@
+body{
+  font-family: 'Itim', cursive;
+}
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  li,a{
+    font-weight: 600;
+    font-size: 20px;
+    color:  #1e29b9 ;
+    text-decoration: none;
+  }
+  button{
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+  }
+  .text1{
+    margin-top: 20%;
+    color: #222dc5;
+  }
+  .card-title{
+    color: #455ff1;
+    font-weight: 600;
+  }
+  .card-text{
+    color: #797979;
+  }
+  .logo{
+    cursor: pointer;
+  }
+  .nav1{
+    background-color: #a7e0ff ;
+
+  }
+  #banner{
+    background-color:#a7e0ff ;
+    padding-top: 2rem;
+    color: #ffffff;
+  }
+  .heart{
+    color: #e21111;
+  }
+  .too{
+    margin-top: 5%;
+  }
+  .t1{
+    margin-top: 15%;
+  }
+
+  .t2{
+    margin-top: 8%;
+  }
+  .pro2{
+    color: #525252;
+  }
+.pro1{
+  font-weight: 500;
+  color: #222dc5;
+}
+  .promo-tittle{
+    font-size: 70px;
+    font-weight: 600;
+    margin-top: 50px ;
+    text-shadow: 3px 2px 3px rgb(27, 35, 145);
+    }
+    .pro{
+      color: #101bb9;
+      font-size: 20px;
+      font-weight: 500;
+      opacity: 60%;
+    }
+  .bottom-img{
+    width: 100%;
+  }
+ .nav{
+   list-style: none;
+ }
+ 
+ .nav li{
+   display: inline-block;
+   padding: 0px 20px;
+ }
+ .nav a{
+   transition: all 0.3s ease 0s;
+ }
+ .nav li ,a :hover{
+color: #f14545;
+ }
+ button{
+   padding: 9px 25px;
+   background-color: #101bb9;
+   border: none ;
+   border-radius: 50px;
+   cursor:pointer;
+   transition: all 0.3s ease 0s;
+ }
+ button:hover{
+   background-color: rgb(255, 230, 0);
+ }
+ .one{
+   background-image: url(https://i.pinimg.com/564x/23/91/54/2391540506d2360e53dfb3d13a58e21e.jpg);
+ }
+ .yu{
+   background-color: #ce51ff;
+ }
+  .rc-text--center {
+      text-align: center;
+      width: 100%;
+  }
+  .rc-baseline *, .rc-baseline :after, .rc-baseline :before {
+      -webkit-box-sizing: inherit;
+      box-sizing: inherit;
+  }
+  
+  div {
+      display: block;
+  } 
+  .container {
+    max-width: 960px;
+  }
+
+  .btnu{
+    color: #ffffff;
+   
+    background-color: #ce51ff;
+  }
+ 
+.m1{
+  padding: 2rem;
+}
+
+
+  .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    
+    letter-spacing: -.05rem;
+    color: #f14593;
+  }
+  .lead{
+    margin: 1rem;
+  }
+  .lead1{
+    margin: 1rem;
+  }
+  
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }

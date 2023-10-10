@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel="icon" href="https://i.pinimg.com/750x/ad/80/65/ad80659ac2bdab5d9f66096520ca528b.jpg" alt="icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css1/page1.css">
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+
+<body id="app">
+    <header class="nav1">
+        <img class="logo" src="https://www.i-pic.info/i/ueXq577217.png" width="130" alt="logo">
+        <nav>
+            <ul class="nav fw-bold">
+                <li>
+                    <a style="color:#000000 " href="../html/page1.html">หน้าหลัก</a>
+                </li>
+                <li>
+                    <a style="color:#ff527e " href="../html/man.html">ผู้ชาย</a>
+                </li>
+                <li>
+                    <a style="color:#ff527e" href="../html/woman.html">ผู้หญิง</a>
+                </li>
+               
+                    <a style="color:#ff527e" href="../html/shop.html">สินค้า</a>
+                </li>
+                </li>
+                <li>
+                    <a style="color:#ff527e" href="../html/about.html">เกี่ยวกับเรา</a>
+                </li>
+            </ul>
+        </nav>
+        <a class="cta" href="../html/shop.html"><button class="shadow">สั่งซื้อเลย !</button></a>
+    </header>
+
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="promo-tittle ">เสื้อผ้าดูดี<br>คุณภาพ<br>ยอดเยี่ยม</h2>
+                    <p class="pro">We care for your love</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/750x/92/a5/ba/92a5bab83dcaac196d01756b1ba60aa4.jpg" alt="" class="" width="400">
+                </div>
+            </div>
+        </div>
+        <img src="../css1/รูป/wave1.png" class="bottom-img" alt="">
+    </section>
+    <main>
+
+
+        <div class="too container">
+            <div class="row justify-content-center ">
+                <div class="col-md-5 ">
+                    <div class="card mb-3 shadow" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://www.i-pic.info/i/X9y7577223.png" class="img-fluid rounded-start"
+                                    alt="...">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title h2">หญิง</h5>
+                                    <p class="card-text">
+                                        เสื้อผ้า เป็นส่วนประกอบหลักของการแต่งกายของผู้หญิง ประเภทของเสื้อผ้าที่ผู้หญิงนิยมสวมใส่ 
+                                        ได้แก่ กระโปรง กางเกง ชุดเดรส เสื้อเชิ้ต เสื้อยืด เป็นต้น</p>
+                                    <a href="../html/woman.html"><button>ดูเพิ่มเติม</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card mb-3 shadow" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://www.i-pic.info/i/ytli577224.png" class="img-fluid rounded-start"
+                                    alt="...">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title h2">ชาย</h5>
+                                    <p class="card-text">
+                                      ซึ่งอาจเเบ่งออกเป็นประเภทต่างๆ
+                                         ตามโอกาส กาลเทศะ หรือตามสไตล์ของผู้สวมใส่ ประเภทของเสื้อผ้าที่ผู้ชายนิยมสวมใส่ 
+                                         ได้แก่ กางเกง เสื้อเชิ้ต เสื้อยืด เสื้อแจ็คเก็ต</p>
+                                    <a href="../html/man.html"><button>ดูเพิ่มเติม</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+         
+
+            <div class="text1 text-center ">
+                <h2> &#10024; สินค้าขายดีที่สุด &#10024;</h2>
+            </div>
+
+
+
+
+            <div class="t2 row  row-cols-sm-3 g-3 ">
+                <div v-for="p in products" class="col">
+                    <div class="card h-100 shadow">
+                        <img v-bind:src="p.image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{p.name}}</h5>
+                            <p class="card-text">{{p.detail}}</p>
+                            <a href="../html/shop.html"><button>เพิ่มเติม</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <footer class="py-3 my-4 p-md-6 m-md-6">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a href="../html/page1.html" class="nav-link px-2 text-muted">หน้าหลัก</a>
+                        </li>
+                        <li class="nav-item"><a href="../html/man.html" class="nav-link px-2 text-muted">ผู้ชาย</a></li>
+                        <li class="nav-item"><a href="../html/wonman.html" class="nav-link px-2 text-muted">ผู้หญิง</a>
+                        </li>
+                       
+                            <a class="nav-link px-2 text-muted" href="../html/shop.html">สินค้า</a>
+                        </li>
+                        <li class="nav-item"><a href="../html/about.html" class="nav-link px-2 text-muted">เกี่ยวกับเรา</a></li>
+                    </ul>
+                    <p class="text-center text-muted">&copy; กลุ่มร้านขายเสื้อผ้า </p>
+                </footer>
+            </div>
+
+
+
+
+
+
+            <script href="../js/bootstrap.min.js">
+            </script>
+
+</body>
+<script src="../vuejs/vuejsApp.js"></script>
+
+</html>

@@ -102,7 +102,7 @@
 
 
        
-        <form class="row g-3 needs-validation" style="padding: 10%;" novalidate action="../server/sendinfo.php" method="POST" enctype="multipart/form-data">
+        <form class="row g-3 needs-validation" style="padding: 10%;"  action="../server/upload.php" method="post" enctype="multipart/form-data">
             <label for="validationCustom01" class="form-label" style="font-size: 25px;">การสั่งซื้อ</label>
             <div class="col-md-4">
                 <label for="validationCustom01" class="form-label">ชื่อ</label>
@@ -158,13 +158,13 @@
             </div>
             <div class="col-12">
                 <label for="validationCustom05" class="form-label">แนปสลิป</label>
-                <input class="form-control" type="file" name="imageFile" >
+                <input class="form-control" type="file" name="uploadfile"   >
                 <div class="invalid-feedback">
                     กรุณาแนบสลิป.
                 </div>
             </div>
             <div class="col-12">
-                <button  class="btn btn-outline-primary" type="submit" name="submit">ชำระเงิน</button>
+                <button  class="btn btn-outline-primary" type="submit"value="upload" name="submit">ชำระเงิน</button>
             </div>
         </form>
 

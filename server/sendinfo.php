@@ -3,14 +3,18 @@ if (isset($_POST['submit'])) {
 	// เชื่อมต่อเข้าสู่ Line Notify
 	$sToken = "jqMhsUI455eSC0KhoIHzrQwTHyOvYJiLhcrOPnukRNx"; // ใส่ Token ของคุณที่ได้จาก Line Notify
 	$name=$_POST['name'];
-	
-	$sMessage = "มีรายการสั่งซื้อเข้าจ้า\n";
+    $exampleField = $_POST['exampleField'];
+
+
+	$sMessage = "\nมีรายการสั่งซื้อเข้าจ้า\n";
 	$sMessage .= "ชื่อ: " . $name . "\n";
 	$sMessage .= "นามสกุล: " . $surname . "\n";
 	$sMessage .= "ที่อยู่: " . $address . "\n";
 	$sMessage .= "อำเภอ: " . $am . "\n";
 	$sMessage .= "จังหวัด: " . $province . "\n";
 	$sMessage .= "เบอร์โทร: " . $call . "\n";
+	$sMessage .= $exampleField;
+
 
 	$filename = $_FILES['uploadfile']['name'];
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);

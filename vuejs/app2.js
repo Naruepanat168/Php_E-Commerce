@@ -37,7 +37,7 @@ Vue.createApp({
       sendCartToPHP() {
         const data = {
           cart: this.cart,
-          orderTotal: this.orderTotal,
+          orderTotal: this.calculateTotalPrice(), // รวมยอดรายการทั้งหมด
         };
   
         axios

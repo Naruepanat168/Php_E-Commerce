@@ -477,24 +477,21 @@ Vue.createApp({
       ],
     };
   },
+  computed: {
+    totalAmount() {
+      return this.cart.reduce((total, item) => {
+        return total + item.price * item.amount;
+      }, 0);
+    },
+  },
   methods: {
     addToCart(product) {
       this.cart.push(product);
       localStorage.setItem("cart", JSON.stringify(this.cart));
-  
+
       const productName = product.name;
       this.sendProductNameToPHP(productName);
     },
-  
-    sendProductNameToPHP(productName) {
-      // ส่งชื่อสินค้าไปยัง PHP โดยใช้ Axios (หรือเวอร์ชัน Fetch API)
-      axios.post('your_php_script.php', { productName })
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
+    
   }
 }).mount("#app");

@@ -1,21 +1,68 @@
-Vue.createApp({ 
-    data() { //ข้อมูล
-        return {
-            cart: JSON.parse(localStorage.getItem('cart')), //แปลงสติงเป็นออบเจต
-        }
+Vue.createApp({
+  data() {
+    //ข้อมูล
+    return {
+      cart: JSON.parse(localStorage.getItem("cart")), //แปลงสติงเป็นออบเจต
+    };
+  },
+  created() {},
+  methods: {
+    deleteCart(id) {
+      this.cart.splice(this.cart.indexOf(id), 1);
+      localStorage.setItem("cart", JSON.stringify(this.cart)); //แปลงจากออบเป็นสติง
     },
-    created() {
+    fin() {
+      alert("เสร็จสิ้นการชำระเงิน");
+      this.cart = [];
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+    },
+    calculateTotalPrice() {
+      let totalPrice = 0;
+      this.cart.forEach((item) => {
+        totalPrice += item.price * item.amount;
+      });
+      return totalPrice;
+    },
+    countOrderedItems() {
+        // ฟังก์ชันนับรายการที่คุณสั่งทั้งหมด
+        return this.cart.length;
+      },
 
-    },
-    methods: {
-        deleteCart(id) {
-            this.cart.splice(this.cart.indexOf(id), 1);
-            localStorage.setItem('cart', JSON.stringify(this.cart)); //แปลงจากออบเป็นสติง
+
+      calculateOrderTotal() {
+        this.orderTotal = this.cart.reduce((total, item) => {
+          return total + item.price * item.amount;
+        }, 0);
+      },
+      sendCartToPHP() {
+        const data = {
+          cart: this.cart,
+          orderTotal: this.orderTotal,
+        };
+  
+        axios
+          .post('../server/sendinfo.php', data)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง PHP:', error);
+          });
         },
-        fin() {
-            alert("เสร็จสิ้นการชำระเงิน");
-            this.cart = [];
-            localStorage.setItem('cart', JSON.stringify(this.cart));
-        }
+    
+  },
+  computed: {
+    totalOrderedItems() {
+      return this.cart.length;
     },
-}).mount('#app2') //ทำงานบนไอดี
+  },
+  watch: {
+    cart: {
+      handler() {
+        this.calculateOrderTotal();
+      },
+      deep: true,
+    },
+},
+  
+}).mount("#app2"); //ทำงานบนไอดี

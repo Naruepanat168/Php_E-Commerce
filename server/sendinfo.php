@@ -2,8 +2,16 @@
 if (isset($_POST['submit'])) {
 	// เชื่อมต่อเข้าสู่ Line Notify
 	$sToken = "jqMhsUI455eSC0KhoIHzrQwTHyOvYJiLhcrOPnukRNx"; // ใส่ Token ของคุณที่ได้จาก Line Notify
+	$name=$_POST['name'];
+	
+	$sMessage = "มีรายการสั่งซื้อเข้าจ้า\n";
+	$sMessage .= "ชื่อ: " . $name . "\n";
+	$sMessage .= "นามสกุล: " . $surname . "\n";
+	$sMessage .= "ที่อยู่: " . $address . "\n";
+	$sMessage .= "อำเภอ: " . $am . "\n";
+	$sMessage .= "จังหวัด: " . $province . "\n";
+	$sMessage .= "เบอร์โทร: " . $call . "\n";
 
-	// ตรวจสอบไฟล์ที่อัปโหลด
 	$filename = $_FILES['uploadfile']['name'];
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);
 	$allowed = array('jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG');
@@ -23,12 +31,15 @@ if (isset($_POST['submit'])) {
 			echo "Upload fail. Something went wrong!";
 		}
 
+		// รับยอดรวมจาก POST request จาก Vue.js
+		$orderTotal = $_POST['orderTotal'];
+
 		// เตรียมไฟล์ที่จะส่งไปยัง Line Notify
 		$imageFile = new CURLFile($moveto);
 
 		$data = array(
-			'message' => 'คำอธิบายรูปภาพ (ถ้ามี)',
-			'imageFile' => $imageFile,
+			'message' => $sMessage,
+			'imageFile' => $imageFile
 		);
 
 		// สร้างคำขอ POST ด้วย cURL
@@ -60,20 +71,6 @@ if (isset($_POST['submit'])) {
 	}
 }
 
-
-// echo $newfilename;
-// ตรวจสอบว่ามีไฟล์รูปภาพถูกอัปโหลดหรือไม่
-
-// เรียกใช้ cURL และส่งไฟล์รูปภาพไปยังเซิร์ฟเวอร์ของคุณ (หรือบันทึกลงดาต้าเบส)
-// $sMessage = "มีรายการสั่งซื้อเข้าจ้า\n";
-// $sMessage .= "ชื่อ: " . $name . "\n";
-// $sMessage .= "นามสกุล: " . $surname . "\n";
-// $sMessage .= "ที่อยู่: " . $address . "\n";
-// $sMessage .= "อำเภอ: " . $am . "\n";
-// $sMessage .= "จังหวัด: " . $province . "\n";
-// $sMessage .= "เบอร์โทร: " . $call . "\n";
-
-
-
 ?>
 <button class="btn btn-outline-primary" type="submit" name="submit"><a href="../html/page1.html">กลับสู่หน้าแรก</a></button>
+<!-- ตรวจสอบว่ามีข้อมูลที่มาจาก PHP หรือไม่ -->

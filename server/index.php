@@ -18,10 +18,12 @@
 <?php
 if (isset($_POST['submit'])) {
 
-    $dir = "/upload/";
+    $dir = "upload/";
     $fileImage = $dir . basename($_FILES["uploadfile"]["name"]);
-    echo $fileImage;
-    move_uploaded_file($_FILES["uploadfile"]["tmp_name"], $fileImage) ;
-        
+    if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], $fileImage) ){
+        echo"ชิื่อไฟล์".basename($_FILES["uploadfile"]["name"])."อัพโหลดแล้ว";
+    }else{
+        echo "เกิดข้อผิดพลาด";
+    }   
 }
 ?>

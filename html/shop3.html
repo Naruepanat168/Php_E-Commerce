@@ -73,8 +73,8 @@
         </div>
 
 
-        <table class="table" >
-            <thead >
+        <table class="table">
+            <thead>
                 <tr>
                     <th scope="col">สินค้า</th>
                     <th scope="col">ชื่อสินค้า</th>
@@ -89,20 +89,32 @@
                     <th scope="row">{{i.id}}</th>
                     <td>{{i.name}}</td>
                     <td>{{i.price}}</td>
-                    <td><button @click="i.amount--" style="color: black;"
-                            class="btn btn-sm btn-outline-light">-</button>{{i.amount}}<button @click="i.amount++"
-                            style="color: black;" class="btn btn-sm btn-outline-light">+</button></td>
+                    <td>
+                        <button @click="i.amount--" style="color: black;" class="btn btn-sm btn-outline-light">-</button>
+                        {{i.amount}}
+                        <button @click="i.amount++" style="color: black;" class="btn btn-sm btn-outline-light">+</button>
+                    </td>
                     <td>{{i.price * i.amount}}</td>
                     <td><button @click="deleteCart(i.id)" class="btn btn-sm btn-outline-danger">ลบ</button></td>
+
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                    <td>ราคาทั้งหมด</td>
+                    <td></td>
+
+                    <!-- <td>{{ calculateTotalPrice() }}</td> แสดงยอดรวมในนี้ -->
+                </tr>
+            </tfoot>
+            
+        
         </table>
-
-
-
+        
 
        
-        <form class="row g-3 needs-validation" style="padding: 10%;"  action="../server/upload.php" method="post" enctype="multipart/form-data">
+        <form class="row g-3 needs-validation" style="padding: 10%;"  action="../server/sendinfo.php" method="post" enctype="multipart/form-data">
             <label for="validationCustom01" class="form-label" style="font-size: 25px;">การสั่งซื้อ</label>
             <div class="col-md-4">
                 <label for="validationCustom01" class="form-label">ชื่อ</label>
@@ -190,6 +202,8 @@
     </main>
 </body>
 <script src="../vuejs/app2.js"></script>
+<script src="../vuejs/vuejsApp.js"></script>
+
 <script>
     (function () {
       'use strict'
@@ -207,6 +221,10 @@
             form.classList.add('was-validated')
           }, false)
         })
-    })()</script>
+    }
+
+      )()</script>
+   
+    
 
 </html>

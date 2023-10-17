@@ -77,14 +77,14 @@ if (isset($_POST['submit'])) {
 		curl_close($chOne);
 	}
 }
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	$data = json_decode(file_get_contents('php://input'), true);
-	$cart = $data["cart"];
-	$productName = $data["productName"];
+// if ($_SERVER["REQUEST_METHOD"] === "POST") {
+// 	$data = json_decode(file_get_contents('php://input'), true);
+// 	$cart = $data["cart"];
+// 	$productName = $data["productName"];
 	
-	echo $productName;
-	// ทำอะไรกับ $cart และ $productName ตามที่คุณต้องการ
-  }
+// 	echo $productName;
+// 	// ทำอะไรกับ $cart และ $productName ตามที่คุณต้องการ
+//   }
   
 
 ?>

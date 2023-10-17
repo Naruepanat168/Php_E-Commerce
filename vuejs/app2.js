@@ -1,4 +1,3 @@
-import axios from "axios";
 Vue.createApp({
   data() {
     //ข้อมูล

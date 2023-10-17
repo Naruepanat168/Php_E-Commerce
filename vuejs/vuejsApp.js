@@ -487,10 +487,14 @@ Vue.createApp({
   methods: {
     addToCart(product) {
       this.cart.push(product);
+      // คำนวณราคารวมและเพิ่มในแต่ละรายการสินค้า
+      product.totalPrice = product.price * product.amount;
       localStorage.setItem("cart", JSON.stringify(this.cart));
-  
+    
       this.sendDataToPHP({
         productName: product.name,
+        productPrice: product.price,
+        productImage: product.image,
         cart: this.cart,
       });
     },
@@ -504,4 +508,6 @@ Vue.createApp({
         });
     }
   }
+  // jqMhsUI455eSC0KhoIHzrQwTHyOvYJiLhcrOPnukRNx
+  
 }).mount("#app");

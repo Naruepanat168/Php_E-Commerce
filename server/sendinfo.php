@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
 	$sMessage .= "อำเภอ: " . $am . "\n";
 	$sMessage .= "จังหวัด: " . $province . "\n";
 	$sMessage .= "เบอร์โทร: " . $call . "\n";
+	
 
 	$filename = $_FILES['uploadfile']['name'];
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -76,6 +77,15 @@ if (isset($_POST['submit'])) {
 		curl_close($chOne);
 	}
 }
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	$data = json_decode(file_get_contents('php://input'), true);
+	$cart = $data["cart"];
+	$productName = $data["productName"];
+	
+	echo $productName;
+	// ทำอะไรกับ $cart และ $productName ตามที่คุณต้องการ
+  }
+  
 
 ?>
 <button class="btn btn-outline-primary" type="submit" name="submit"><a href="../html/page1.html">กลับสู่หน้าแรก</a></button>

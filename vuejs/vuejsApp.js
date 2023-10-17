@@ -1,3 +1,5 @@
+import axios from "axios";
+
 Vue.createApp({
   data() {
     return {
@@ -488,10 +490,20 @@ Vue.createApp({
     addToCart(product) {
       this.cart.push(product);
       localStorage.setItem("cart", JSON.stringify(this.cart));
-
-      const productName = product.name;
-      this.sendProductNameToPHP(productName);
+  
+      this.sendDataToPHP({
+        productName: product.name,
+        cart: this.cart,
+      });
     },
-    
+    sendDataToPHP(data) {
+      axios.post('../server/sendinfo.php', data)
+        .then(response => {
+          console.log(response.data); // ตรวจสอบข้อมูลที่ PHP ส่งกลับ (ถ้ามี)
+        })
+        .catch(error => {
+          console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง PHP:', error);
+        });
+    }
   }
 }).mount("#app");

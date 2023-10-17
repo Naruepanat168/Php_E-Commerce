@@ -1,3 +1,4 @@
+import axios from "axios";
 Vue.createApp({
   data() {
     //ข้อมูล
@@ -27,42 +28,26 @@ Vue.createApp({
         // ฟังก์ชันนับรายการที่คุณสั่งทั้งหมด
         return this.cart.length;
       },
-
-
-      calculateOrderTotal() {
-        this.orderTotal = this.cart.reduce((total, item) => {
-          return total + item.price * item.amount;
-        }, 0);
-      },
-      sendCartToPHP() {
-        const data = {
+      addToCart(product) {
+        this.cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(this.cart));
+    
+        this.sendDataToPHP({
+          productName: product.name,
           cart: this.cart,
-          orderTotal: this.calculateTotalPrice(), // รวมยอดรายการทั้งหมด
-        };
-  
-        axios
-          .post('../server/sendinfo.php', data)
-          .then((response) => {
-            console.log(response);
+        });
+      },
+      sendDataToPHP(data) {
+        axios.post('../server/sendinfo.php', data)
+          .then(response => {
+            console.log(response.data); // ตรวจสอบข้อมูลที่ PHP ส่งกลับ (ถ้ามี)
           })
-          .catch((error) => {
+          .catch(error => {
             console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง PHP:', error);
           });
-        },
+      }
     
   },
-  computed: {
-    totalOrderedItems() {
-      return this.cart.length;
-    },
-  },
-  watch: {
-    cart: {
-      handler() {
-        this.calculateOrderTotal();
-      },
-      deep: true,
-    },
-},
+ 
   
 }).mount("#app2"); //ทำงานบนไอดี

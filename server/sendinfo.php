@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     curl_close($ch);
     
     echo "ส่งข้อมูลไปยัง LINE Notify สำเร็จ!";
-	echo '<script>window.location.href = "../html/page1.html";</script>';
+	// echo '<script>window.location.href = "../html/page1.html";</script>';
 
 }
 

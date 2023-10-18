@@ -37,6 +37,8 @@ Vue.createApp({
         });
       },
       sendDataToPHP(data) {
+        data.totalPrice = this.calculateTotalPrice();
+
         axios.post('../server/sendinfo.php', data)
           .then(response => {
             console.log(response.data); // ตรวจสอบข้อมูลที่ PHP ส่งกลับ (ถ้ามี)
